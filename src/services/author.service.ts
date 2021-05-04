@@ -11,14 +11,18 @@ export class AuthorService {
   constructor(private http: HttpClient) {}
 
   deleteEntity(id: Number) {
-    return this.http.delete('https://localhost:5001/api/authors/' + id);
+    return this.http.delete('http://erolaksoy.net/api/authors/' + id);
+  }
+
+  getAuthorsWithBooks(){
+    return this.http.get<AuthorModel[]>('http://erolaksoy.net/api/authors/GetAuthorsWithBook/');
   }
 
   addEntity(model: AuthorModel) {
     const headerss = new Headers({ 'content-type': 'application/json' });
     const body = JSON.stringify(model);
     console.log(body);
-    return this.http.post('https://localhost:5001/api/authors/', body,{
+    return this.http.post('http://erolaksoy.net/api/authors/', body,{
       headers : { 'content-type': 'application/json' }
     });
   }
@@ -27,16 +31,16 @@ export class AuthorService {
     const headerss = new Headers({ 'content-type': 'application/json' });
     const body = JSON.stringify(AuthorModel);
     console.log(body);
-    return this.http.put("https://localhost:5001/api/authors/",body,{
+    return this.http.put("http://erolaksoy.net/api/authors/",body,{
       headers : { 'content-type': 'application/json' }
     });
   }
 
   getEntity(id : Number){
-    return this.http.get<AuthorModel>('https://localhost:5001/api/books/getAuthorById/' + id);
+    return this.http.get<AuthorModel>('http://erolaksoy.net/api/getAuthorById/' + id);
   }
 
   getAuthors() : Observable<AuthorModel[]>{
-    return this.http.get<AuthorModel[]>("https://localhost:5001/api/authors")
+    return this.http.get<AuthorModel[]>("http://erolaksoy.net/api/authors")
   }
 }

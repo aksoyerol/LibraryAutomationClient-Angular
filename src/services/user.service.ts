@@ -7,7 +7,7 @@ import { UserModel } from 'src/Models/UserModel';
   providedIn: 'root'
 })
 export class UserService {
-  BaseURL = "https://localhost:5001/api/"
+  BaseURL = "http://erolaksoy.net/api/"
   constructor(private http: HttpClient) {
   }
 

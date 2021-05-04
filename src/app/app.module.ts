@@ -20,6 +20,7 @@ import {
   NgxMatNativeDateModule,
   NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
+import { ListComponent } from './list/list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import {
     BorrowbookComponent,
     UserComponent,
     AuthorComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
